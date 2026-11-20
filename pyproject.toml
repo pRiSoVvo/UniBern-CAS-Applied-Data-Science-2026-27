@@ -1,0 +1,45 @@
+[build-system]
+requires = ["flit_core >=3.2,<4"]
+build-backend = "flit_core.buildapi"
+
+[project]
+name = "railway_rolling_stock_market_analysis"
+version = "0.0.1"
+description = "Analysis of railway rolling stock procurement, market trends and pricing."
+authors = [
+  { name = "Henrique Rocha" },
+]
+license = { file = "LICENSE" }
+readme = "README.md"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License"
+]
+dependencies = [
+    "ipython",
+    "jupyterlab",
+    "matplotlib",
+    "notebook",
+    "numpy",
+    "pandas",
+    "pip",
+    "pytest",
+    "python-dotenv",
+    "ruff",
+    "scikit-learn",
+]
+requires-python = "~=3.14.0"
+
+
+[tool.ruff]
+line-length = 99
+src = ["railway_rolling_stock_market_analysis"]
+include = ["pyproject.toml", "railway_rolling_stock_market_analysis/**/*.py"]
+
+[tool.ruff.lint]
+extend-select = ["I"]  # Add import sorting
+
+[tool.ruff.lint.isort]
+known-first-party = ["railway_rolling_stock_market_analysis"]
+force-sort-within-sections = true
+
